@@ -9,7 +9,7 @@ El flujo de trabajo sigue los siguientes pasos:
    Realiza un análisis preliminar de los datos textuales extraídos de los informes. Se exploran frecuencias, distribución de términos y métricas básicas.
 
 2. **`analisis_panel.py`**  
-   Integra el análisis exploratorio con variables de panel económico-financiero, permitiendo estudiar la relación entre temas tratados y características de las empresas.
+   Análisis econométrico con estructura de panel entre variables ESG y rendimientos financier.
 
 3. **`pasar_pdf_txt.py`**  
    Script de extracción: convierte informes en formato PDF a texto plano para su posterior procesamiento.
@@ -18,7 +18,7 @@ El flujo de trabajo sigue los siguientes pasos:
    Limpieza y preprocesamiento de los textos: eliminación de caracteres no deseados, normalización, tokenización, etc.
 
 5. **`results_bertopic.py`**  
-   Aplicación del modelo BERTopic para extraer tópicos latentes de los informes. Incluye visualizaciones básicas.
+   Aplicación del modelo BERTopic para extraer tópicos latentes de los informes y primera parte del análisis multivariante.
 
 6. **`biplot_bertopic.R`**  
    Script en R para la representación gráfica tipo *biplot* de los tópicos generados por BERTopic, proporcionando una vista complementaria de los resultados.
@@ -30,14 +30,14 @@ El flujo de trabajo sigue los siguientes pasos:
 - Paquetes:
   - `pandas`, `numpy`, `matplotlib`, `seaborn`
   - `sklearn`, `scipy`, `nltk`, `bertopic`, etc.
-- Para el script en R: `ggplot2`, `FactoMineR`, entre otros.
+- Para el script en R: `ggplot2`, `MultBiplotR`, `dyplyr`, etc.
 
 ## Uso
 
 1. Extraer los textos desde PDF con `pasar_pdf_txt.py`
 2. Limpiar los textos con `limpieza_reportes.py`
 3. Realizar análisis preliminar con `analisis_exploratorio.py`
-4. Profundizar con `analisis_panel.py`
-5. Ejecutar `results_bertopic.py` para generar y visualizar tópicos
-6. Visualizar los resultados con `biplot_bertopic.R` si se desea
+4. Realizar el análisis de panel entre métricas ESG y los rendimientos financieros con `analisis_panel.py`
+5. Ejecutar `results_bertopic.py` para generar y visualizar los temas, la clusterización y las correlaciones
+6. Visualizar los resultados del PCA, HJ-Biplots y las diferencias entre temas con `biplot_bertopic.R`
 
